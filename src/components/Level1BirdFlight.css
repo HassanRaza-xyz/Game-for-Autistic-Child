@@ -1,0 +1,78 @@
+.level1-screen, .level2-screen, .level3-screen {
+  position: relative; width: 100%; height: 100%; overflow: hidden;
+  background: var(--bg-dark);
+}
+.game-canvas { display: block; width: 100%; height: 100%; }
+
+/* HUD */
+.game-hud {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 24px;
+  background: linear-gradient(180deg, rgba(250,246,241,0.95) 0%, rgba(250,246,241,0) 100%);
+}
+.hud-btn {
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  padding: 8px 18px; border: 1px solid var(--border); border-radius: var(--radius-full);
+  background: var(--bg-card); color: var(--text-primary); cursor: pointer;
+  transition: all var(--transition-base); box-shadow: var(--shadow-sm);
+}
+.hud-btn:hover { background: var(--bg-card-light); border-color: var(--primary-light); box-shadow: var(--shadow-md); }
+.hud-center { text-align: center; }
+.hud-level { display: block; font-size: 0.65rem; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+.hud-title { font-family: var(--font-display); font-size: 1.05rem; color: var(--text-primary); }
+.hud-right { display: flex; gap: 12px; align-items: center; }
+.score-display, .timer-display, .round-display {
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+  padding: 6px 14px; border-radius: var(--radius-full);
+  background: var(--bg-card); color: var(--primary);
+  border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+}
+.timer-display { color: var(--secondary); }
+.round-display { color: var(--primary); }
+
+/* Voice Meter */
+.voice-meter {
+  position: absolute; right: 24px; bottom: 24px; top: 80px; width: 44px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 10;
+}
+.meter-label { font-size: 0.6rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; writing-mode: vertical-rl; }
+.meter-bar-wrap {
+  flex: 1; width: 12px; background: var(--bg-surface); border-radius: var(--radius-full);
+  overflow: hidden; position: relative; border: 1px solid var(--border);
+  display: flex; align-items: flex-end;
+}
+.meter-bar-fill {
+  width: 100%; border-radius: var(--radius-full);
+  transition: height 0.1s ease; min-height: 4px;
+}
+.meter-value { font-size: 0.65rem; color: var(--text-secondary); font-weight: 700; }
+
+/* Overlay Info */
+.game-overlay-info {
+  position: absolute; inset: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(250,246,241,0.88); backdrop-filter: blur(10px);
+  animation: fadeIn 0.4s ease;
+}
+.overlay-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 40px;
+  max-width: 480px; width: 90%; text-align: center;
+  animation: fadeInScale 0.5s ease;
+  box-shadow: var(--shadow-lg);
+}
+.overlay-card h2 { font-size: 1.6rem; margin-bottom: var(--space-md); }
+.overlay-card p { color: var(--text-secondary); line-height: 1.7; margin-bottom: var(--space-xl); font-size: 1rem; }
+.btn-start-game { margin-top: var(--space-lg); font-size: 1.1rem; padding: 16px 48px; }
+
+/* Volume Guide */
+.volume-guide { margin: var(--space-lg) 0; }
+.guide-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.guide-label { width: 70px; font-size: 0.8rem; color: var(--text-secondary); text-align: right; }
+.guide-bar { flex: 1; height: 10px; background: var(--bg-surface); border-radius: var(--radius-full); overflow: hidden; }
+.guide-fill { height: 100%; border-radius: var(--radius-full); }
+.guide-fill.low { width: 25%; background: var(--secondary); }
+.guide-fill.mid { width: 55%; background: var(--accent); }
+.guide-fill.high { width: 90%; background: var(--grad-primary); }
+.guide-text { font-size: 0.75rem; color: var(--text-muted); width: 100px; }

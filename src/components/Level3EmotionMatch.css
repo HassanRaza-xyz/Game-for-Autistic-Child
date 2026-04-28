@@ -1,0 +1,57 @@
+.emotion-game-area {
+  position: absolute; inset: 0; padding-top: 70px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--bg-dark);
+  gap: 24px;
+}
+.emotion-face-container { text-align: center; animation: fadeInScale 0.6s ease; }
+.emotion-face {
+  width: 140px; height: 140px; margin: 0 auto 16px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 16px rgba(184, 120, 78, 0.2));
+}
+.face-svg { width: 100%; height: 100%; }
+.emotion-label {
+  font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.emotion-hint { color: var(--text-secondary); font-size: 1rem; font-weight: 500; }
+
+.emotion-meter-section { width: min(480px, 85vw); animation: fadeInUp 0.8s ease; }
+.emotion-time-bar {
+  width: 100%; height: 4px; background: var(--bg-surface);
+  border-radius: var(--radius-full); overflow: hidden; margin-bottom: 20px;
+}
+.time-bar-fill {
+  height: 100%; background: var(--grad-warm); border-radius: var(--radius-full);
+  transition: width 0.1s linear;
+}
+.emotion-meter-label {
+  font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 700; margin-bottom: 8px; text-align: center;
+}
+.emotion-meter-track {
+  position: relative; width: 100%; height: 20px; background: var(--bg-surface);
+  border-radius: var(--radius-full); overflow: hidden; border: 1px solid var(--border);
+}
+.emotion-meter-fill {
+  position: absolute; top: 0; left: 0; height: 100%;
+  border-radius: var(--radius-full); transition: width 0.1s ease; opacity: 0.85;
+}
+.emotion-meter-target {
+  position: absolute; top: -2px; height: calc(100% + 4px);
+  border: 2px dashed rgba(44, 36, 23, 0.2); border-radius: var(--radius-sm);
+  background: rgba(44, 36, 23, 0.03); pointer-events: none;
+}
+.emotion-meter-labels {
+  display: flex; justify-content: space-between; margin-top: 8px;
+  font-size: 0.7rem; color: var(--text-muted);
+}
+
+.emotion-examples { margin: 16px 0; text-align: left; }
+.em-ex {
+  display: flex; align-items: center; gap: 12px; padding: 8px 12px;
+  background: var(--bg-surface); border-radius: var(--radius-sm); margin-bottom: 8px;
+  font-size: 0.85rem; color: var(--text-secondary);
+}
+.em-face { font-size: 1.4rem; }

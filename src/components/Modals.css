@@ -1,0 +1,83 @@
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+.modal-wide { width: min(600px, 90vw); }
+
+/* Settings */
+.setting-row { margin-bottom: 20px; }
+.setting-row label {
+  display: block; font-size: 0.85rem; font-weight: 600;
+  color: var(--text-secondary); margin-bottom: 8px;
+}
+.setting-row input[type="text"],
+.setting-row select {
+  width: 100%; padding: 10px 14px; border: 1px solid var(--border);
+  border-radius: var(--radius-md); background: var(--bg-surface);
+  color: var(--text-primary); font-family: var(--font-body); font-size: 0.9rem;
+  outline: none; transition: border-color 0.3s;
+}
+.setting-row input[type="text"]:focus,
+.setting-row select:focus { border-color: var(--primary); }
+.setting-row input[type="range"] {
+  width: 100%; accent-color: var(--primary);
+}
+.toggle-row {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.toggle-switch {
+  position: relative; display: inline-block; width: 48px; height: 26px; cursor: pointer;
+}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.toggle-slider {
+  position: absolute; inset: 0; background: var(--bg-surface);
+  border-radius: 26px; transition: 0.3s; border: 1px solid var(--border);
+}
+.toggle-slider::before {
+  content: ''; position: absolute; height: 20px; width: 20px;
+  left: 2px; bottom: 2px; background: white; border-radius: 50%;
+  transition: 0.3s; box-shadow: var(--shadow-sm);
+}
+.toggle-switch input:checked + .toggle-slider { background: var(--primary); border-color: var(--primary); }
+.toggle-switch input:checked + .toggle-slider::before { transform: translateX(22px); }
+.modal-actions { display: flex; gap: 12px; justify-content: center; margin-top: 28px; }
+
+/* Help */
+.help-content { margin: 16px 0 24px; }
+.help-step {
+  display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px;
+  padding: 12px; background: var(--bg-surface); border-radius: var(--radius-md);
+}
+.help-num {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--grad-primary); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-body); font-weight: 700; font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.help-step h4 { font-size: 0.95rem; margin-bottom: 4px; color: var(--text-primary); font-family: var(--font-display); }
+.help-step p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* Mic Permission */
+.mic-permission-screen {
+  position: absolute; inset: 0;
+  background: var(--bg-dark);
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.5s ease;
+}
+.permission-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 48px 40px;
+  text-align: center; max-width: 460px; width: 90%;
+  animation: fadeInScale 0.6s ease; box-shadow: var(--shadow-lg);
+}
+.permission-icon {
+  font-size: 3.5rem; margin-bottom: 16px;
+  animation: float 3s ease-in-out infinite;
+}
+.permission-card h2 { font-size: 1.4rem; margin-bottom: 12px; }
+.permission-card > p { color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; font-size: 0.95rem; }
+.permission-note {
+  margin-top: 16px; font-size: 0.75rem; color: var(--text-muted);
+}
