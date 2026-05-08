@@ -1,4 +1,4 @@
-# SpeakQuest — Speech Therapy Game for Children with Autism
+# SpeakQuest— Speech Therapy Game for Children with Autism
 
 > An interactive, gamified speech therapy tool designed to improve verbal engagement in children on the autism spectrum through voice-controlled games.
 
